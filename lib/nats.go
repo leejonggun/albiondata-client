@@ -15,4 +15,5 @@ const (
 	// Private Topics
 	NatsSkillData           = "skills"
 	NatsMarketNotifications = "marketnotifications"
+	NatsCharacterJoin       = "character.join"
 )
