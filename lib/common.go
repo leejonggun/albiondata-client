@@ -16,3 +16,9 @@ type PersonalizedUpload interface {
 
 // Represents a character identifier in its UUID-style string format
 type CharacterID string
+
+type PrivateUploadExt struct {
+	PrivateUpload
+	GuildID   CharacterID `json:"GuildId"`
+	GuildName string      `json:"GuildName"`
+}

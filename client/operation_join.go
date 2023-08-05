@@ -49,4 +49,11 @@ func (op operationJoinResponse) Process(state *albionState) {
 		log.Infof("Updating player to %v.", op.CharacterName)
 	}
 	state.CharacterName = op.CharacterName
+
+	upload := &lib.PrivateUploadExt{
+		GuildID:   op.GuildID,
+		GuildName: op.GuildName,
+	}
+
+	sendMsgToPrivateUploaders(upload, lib.NatsCharacterJoin, state)
 }
