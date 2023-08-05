@@ -24,7 +24,7 @@ func main() {
 		return
 	}
 
-	startUpdater()
+	// startUpdater()
 
 	go systray.Run()
 
