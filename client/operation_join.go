@@ -22,6 +22,7 @@ type operationJoinResponse struct {
 func (op operationJoinResponse) Process(state *albionState) {
 	log.Debugf("Got JoinResponse operation...")
 
+	albionServerID := state.AODataServerID
 	// Reset the AODataServerID here. This leads to a fresh execution
 	// of SetServerID() incase the player switched servers
 	state.AODataServerID = 0
@@ -51,8 +52,9 @@ func (op operationJoinResponse) Process(state *albionState) {
 	state.CharacterName = op.CharacterName
 
 	upload := &lib.PrivateUploadExt{
-		GuildID:   op.GuildID,
-		GuildName: op.GuildName,
+		GuildID:      op.GuildID,
+		GuildName:    op.GuildName,
+		AlbionServer: albionServerID,
 	}
 
 	sendMsgToPrivateUploaders(upload, lib.NatsCharacterJoin, state)

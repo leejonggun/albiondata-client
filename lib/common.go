@@ -19,6 +19,7 @@ type CharacterID string
 
 type PrivateUploadExt struct {
 	PrivateUpload
-	GuildID   CharacterID `json:"GuildId"`
-	GuildName string      `json:"GuildName"`
+	GuildID      CharacterID `json:"GuildId"`
+	GuildName    string      `json:"GuildName"`
+	AlbionServer int         `json:"AlbionServer"` // 0 for reset, 1 for west, 2 for east
 }
