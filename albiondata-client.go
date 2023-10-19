@@ -24,7 +24,7 @@ func main() {
 		return
 	}
 
-	// startUpdater()
+	startUpdater()
 
 	go systray.Run()
 
@@ -43,9 +43,9 @@ func startUpdater() {
 	if version != "" && !strings.Contains(version, "dev") {
 		u := updater.NewUpdater(
 			version,
-			"ao-data",
+			"leejonggun",
 			"albiondata-client",
-			"update-",
+			"customize-",
 		)
 
 		go func() {
